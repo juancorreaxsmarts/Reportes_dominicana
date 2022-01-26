@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_report_dgii_wizard,report.dgii.wizard,model_report_dgii_wizard,,1,1,1,1
+access_report_606,report.606,model_report_606,,1,0,0,0
+access_report_607,report.607,model_report_607,,1,0,0,0
+access_report_608,report.608,model_report_608,,1,0,0,0
