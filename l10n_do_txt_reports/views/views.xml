@@ -1,0 +1,152 @@
+<odoo>
+  <data>
+
+    <menuitem id="txt_menu_report"
+        name="Informes DGII TXT"
+        parent="account.menu_finance_reports"
+        sequence="500"/>
+
+    		<record model="ir.ui.view" id="606_txt_form_view">
+    			<field name="name">606.txt.form</field>
+    			<field name="model">txt_report.606</field>
+    			<field name="arch" type="xml">
+    				<form string="Retenciones de IVA">
+    					<group>
+                <group>
+    						<field name="year_txt"/>
+    						<field name="month_txt"/>
+              </group>
+    						<field name = "file_data" filename = "file_name" readonly = "1"/>
+    						<field name = "file_name" invisible="1"/>
+    					</group>
+    					<footer>
+    						<div class="oe_left">
+
+    							<button string="Generar TXT" name="action_generate_txt"
+    								type="object"  class="oe_highlight"/>
+    							<button string="Cerrar" special="cancel" type="object"
+    								class="oe_link" />
+    						</div>
+    					</footer>
+    				</form>
+    			</field>
+    		</record>
+
+            <!-- ACCIONES -->
+
+    	    <record id="606_txt_form" model="ir.actions.act_window">
+    	        <field name="name">Reporte TXT 606</field>
+    	        <field name="type">ir.actions.act_window</field>
+    	        <field name="res_model">txt_report.606</field>
+    	        <field name="view_mode">form</field>
+    	        <field name="view_id" ref="606_txt_form_view"/>
+    	        <field name="target">new</field>
+    	    </record>
+
+            <!-- MENUS -->
+            <menuitem
+                id="606_txt"
+                name="606_txt"
+                parent="txt_menu_report"
+                action="606_txt_form"
+            />
+
+
+    <!-- 607 -->
+
+
+
+    <record model="ir.ui.view" id="607_txt_form_view">
+      <field name="name">607.txt.form</field>
+      <field name="model">txt_report.607</field>
+      <field name="arch" type="xml">
+        <form string="Retenciones de IVA">
+          <group>
+            <group>
+            <field name="year_txt"/>
+            <field name="month_txt"/>
+          </group>
+            <field name = "file_data" filename = "file_name" readonly = "1"/>
+            <field name = "file_name" invisible="1"/>
+          </group>
+          <footer>
+            <div class="oe_left">
+
+              <button string="Generar TXT" name="action_generate_txt"
+                type="object"  class="oe_highlight"/>
+              <button string="Cerrar" special="cancel" type="object"
+                class="oe_link" />
+            </div>
+          </footer>
+        </form>
+      </field>
+    </record>
+
+        <!-- ACCIONES -->
+
+      <record id="607_txt_form" model="ir.actions.act_window">
+          <field name="name">Reporte TXT 607</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">txt_report.607</field>
+          <field name="view_mode">form</field>
+          <field name="view_id" ref="607_txt_form_view"/>
+          <field name="target">new</field>
+      </record>
+
+        <!-- MENUS -->
+        <menuitem
+            id="607_txt"
+            name="607_txt"
+            parent="txt_menu_report"
+            action="607_txt_form"
+        />
+
+        <!-- 608 -->
+
+        <record model="ir.ui.view" id="608_txt_form_view">
+          <field name="name">608.txt.form</field>
+          <field name="model">txt_report.608</field>
+          <field name="arch" type="xml">
+            <form string="Retenciones de IVA">
+              <group>
+                <group>
+                <field name="year_txt"/>
+                <field name="month_txt"/>
+              </group>
+                <field name = "file_data" filename = "file_name" readonly = "1"/>
+                <field name = "file_name" invisible="1"/>
+              </group>
+              <footer>
+                <div class="oe_left">
+
+                  <button string="Generar TXT" name="action_generate_txt"
+                    type="object"  class="oe_highlight"/>
+                  <button string="Cerrar" special="cancel" type="object"
+                    class="oe_link" />
+                </div>
+              </footer>
+            </form>
+          </field>
+        </record>
+
+            <!-- ACCIONES -->
+
+          <record id="608_txt_form" model="ir.actions.act_window">
+              <field name="name">Reporte TXT 608</field>
+              <field name="type">ir.actions.act_window</field>
+              <field name="res_model">txt_report.608</field>
+              <field name="view_mode">form</field>
+              <field name="view_id" ref="608_txt_form_view"/>
+              <field name="target">new</field>
+          </record>
+
+            <!-- MENUS -->
+            <menuitem
+                id="608_txt"
+                name="608_txt"
+                parent="txt_menu_report"
+                action="608_txt_form"
+            />
+
+  </data>
+</odoo>
