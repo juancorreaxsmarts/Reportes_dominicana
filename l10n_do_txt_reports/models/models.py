@@ -61,7 +61,7 @@ class L10nDoTxtReports(models.Model):
     def action_generate_txt(self):
 
         self.file_name = 'txt_generacion.txt'
-        with open("C:/Program Files (x86)/Odoo 13.0e/server/odoo/addons/xmarts_dgii_reports/wizard/txt_generacion.txt", "w") as file:
+        with open("/home/odoo/txt.txt", "w") as file:
 			#periodo = '%s'%(rec.invoice_id.date)
 			#periodo = periodo.replace('-', '')
 			#periodo = periodo[0:6]
@@ -103,7 +103,7 @@ class L10nDoTxtReports(models.Model):
 
 
 
-        self.write({'file_data': base64.encodestring(open("C:/Program Files (x86)/Odoo 13.0e/server/odoo/addons/xmarts_dgii_reports/wizard/txt_generacion.txt", "rb").read()),
+        self.write({'file_data': base64.encodestring(open("/home/odoo/txt.txt", "rb").read()),
             'file_name': "606.txt",
 				})
 
@@ -150,7 +150,7 @@ class L10nDoTxtReportsdos(models.Model):
     def action_generate_txt(self):
 
         self.file_name = 'txt_generacion.txt'
-        with open("C:/Program Files (x86)/Odoo 13.0e/server/odoo/addons/xmarts_dgii_reports/wizard/txt_generacion.txt", "w") as file:
+        with open("/home/odoo/txt.txt", "w") as file:
 			#periodo = '%s'%(rec.invoice_id.date)
 			#periodo = periodo.replace('-', '')
 			#periodo = periodo[0:6]
@@ -192,7 +192,7 @@ class L10nDoTxtReportsdos(models.Model):
 
 
 
-        self.write({'file_data': base64.encodestring(open("C:/Program Files (x86)/Odoo 13.0e/server/odoo/addons/xmarts_dgii_reports/wizard/txt_generacion.txt", "rb").read()),
+        self.write({'file_data': base64.encodestring(open("/home/odoo/txt.txt", "rb").read()),
             'file_name': "607.txt",
 				})
 
@@ -238,7 +238,7 @@ class L10nDoTxtReportstres(models.Model):
     def action_generate_txt(self):
 
         self.file_name = 'txt_generacion.txt'
-        with open("C:/Program Files (x86)/Odoo 13.0e/server/odoo/addons/xmarts_dgii_reports/wizard/txt_generacion.txt", "w") as file:
+        with open("/home/odoo/txt.txt", "w") as file:
 			#periodo = '%s'%(rec.invoice_id.date)
 			#periodo = periodo.replace('-', '')
 			#periodo = periodo[0:6]
@@ -280,7 +280,7 @@ class L10nDoTxtReportstres(models.Model):
 
 
 
-        self.write({'file_data': base64.encodestring(open("C:/Program Files (x86)/Odoo 13.0e/server/odoo/addons/xmarts_dgii_reports/wizard/txt_generacion.txt", "rb").read()),
+        self.write({'file_data': base64.encodestring(open("/home/odoo/txt.txt", "rb").read()),
             'file_name': "608.txt",
 				})
 
