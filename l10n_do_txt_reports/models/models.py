@@ -38,6 +38,27 @@ class L10nDoTxtReports(models.Model):
         self.file_name = 'txt_generacion.txt'
         with open("/home/odoo/txt.txt", "w") as file:
 
+            file.write(self.invoice_id + "\t")
+            file.write(self.moneda + "\t")
+            file.write(self.rnc + "\t")
+            file.write(self.provider_name + "\t")
+            file.write(self.tipo_bien_servicio + "\t")
+            file.write(self.ncf + "\t")
+            file.write(self.ncf_modificado + "\t")
+            file.write(self.invoice_date + "\t")
+            #file.write(self. + "\t")
+            #file.write(self. + "\t")
+            #file.write(self. + "\t")
+            #file.write(self. + "\t")
+            #file.write(self. + "\t")
+            #file.write(self. + "\t")
+            #file.write(self. + "\t")
+            #file.write(self. + "\t")
+            #file.write(self. + "\t")
+            #file.write(self. + "\t")
+            #file.write(self. + "\t")
+            #file.write(self. + "\t")
+            #file.write(self. + "\t")
             file.write('0' + "\n")
 
 
