@@ -33,6 +33,30 @@ class L10nDoTxtReports(models.Model):
     file_data = fields.Binary('Archivo TXT', filters=None, help="")
     file_name = fields.Char('txt_generacion.txt', size=256, required=False, help="",)
 
+    def show_view(self, name, model, id_xml, res_id=None, view_mode='tree,form', nodestroy=True, target='new'):
+        context = self._context
+        mod_obj = self.env['ir.model.data']
+        view_obj = self.env['ir.ui.view']
+        module = ""
+        view_id = self.env.ref(id_xml).id
+        if view_id:
+            view = view_obj.browse(view_id)
+            view_mode = view.type
+        ctx = context.copy()
+        ctx.update({'active_model': model})
+        res = {'name': name,
+                'view_type': 'form',
+                'view_mode': view_mode,
+                'view_id': view_id,
+                'res_model': model,
+                'res_id': res_id,
+                'nodestroy': nodestroy,
+                'target': target,
+                'type': 'ir.actions.act_window',
+                'context': ctx,
+                }
+        return res
+        
     def action_generate_txt(self):
 
         self.file_name = 'txt_generacion.txt'
