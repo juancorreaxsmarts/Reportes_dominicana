@@ -24,7 +24,7 @@ import requests
 
 
 class L10nDoTxtReports(models.Model):
-    _inherit = 'report.606'
+    _inherit = 'txt_report.606'
 
     delimiter = '\t'
     quotechar = "'"
@@ -56,34 +56,36 @@ class L10nDoTxtReports(models.Model):
                 'context': ctx,
                 }
         return res
-        
+
     def action_generate_txt(self):
 
+        rec_cursor = self.env['account.move'].browse(self.env.context['active_ids'])
         self.file_name = 'txt_generacion.txt'
         with open("/home/odoo/txt.txt", "w") as file:
 
-            file.write(self.invoice_id + "\t")
-            file.write(self.moneda + "\t")
-            file.write(self.rnc + "\t")
-            file.write(self.provider_name + "\t")
-            file.write(self.tipo_bien_servicio + "\t")
-            file.write(self.ncf + "\t")
-            file.write(self.ncf_modificado + "\t")
-            file.write(self.invoice_date + "\t")
-            #file.write(self. + "\t")
-            #file.write(self. + "\t")
-            #file.write(self. + "\t")
-            #file.write(self. + "\t")
-            #file.write(self. + "\t")
-            #file.write(self. + "\t")
-            #file.write(self. + "\t")
-            #file.write(self. + "\t")
-            #file.write(self. + "\t")
-            #file.write(self. + "\t")
-            #file.write(self. + "\t")
-            #file.write(self. + "\t")
-            #file.write(self. + "\t")
-            file.write('0' + "\n")
+            for rec in rec_cursor:
+                file.write(rec.invoice_id + "\t")
+                file.write(rec.moneda + "\t")
+                file.write(rec.rnc + "\t")
+                file.write(rec.provider_name + "\t")
+                file.write(rec.tipo_bien_servicio + "\t")
+                file.write(rec.ncf + "\t")
+                file.write(rec.ncf_modificado + "\t")
+                file.write(rec.invoice_date + "\t")
+                #file.write(self. + "\t")
+                #file.write(self. + "\t")
+                #file.write(self. + "\t")
+                #file.write(self. + "\t")
+                #file.write(self. + "\t")
+                #file.write(self. + "\t")
+                #file.write(self. + "\t")
+                #file.write(self. + "\t")
+                #file.write(self. + "\t")
+                #file.write(self. + "\t")
+                #file.write(self. + "\t")
+                #file.write(self. + "\t")
+                #file.write(self. + "\t")
+                file.write('0' + "\n")
 
 
 

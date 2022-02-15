@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_txt_report_606,txt_report.606,model_txt_report_606,,1,1,1,1
 access_txt_report_607,txt_report.607,model_txt_report_607,,1,1,1,1
 access_txt_report_608,txt_report.608,model_txt_report_608,,1,1,1,1
