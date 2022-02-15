@@ -24,7 +24,7 @@ import requests
 
 
 class L10nDoTxtReports(models.Model):
-    _inherit = 'txt_report.606'
+    _name = 'txt_report.606'
 
     delimiter = '\t'
     quotechar = "'"
