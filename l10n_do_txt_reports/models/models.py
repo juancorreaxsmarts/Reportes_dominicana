@@ -59,7 +59,7 @@ class L10nDoTxtReports(models.Model):
 
     def action_generate_txt(self):
 
-        rec_cursor = self.env['account.move'].browse(self.env.context['active_ids'])
+        rec_cursor = self.env['report.606'].browse(self.env.context['active_ids'])
         self.file_name = 'txt_generacion.txt'
         with open("/home/odoo/txt.txt", "w") as file:
 
