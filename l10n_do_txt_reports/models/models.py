@@ -24,7 +24,7 @@ import requests
 
 
 class L10nDoTxtReports(models.Model):
-    _name = 'txt_report.606'
+    _name = 'report.606'
 
     delimiter = '\t'
     quotechar = "'"
@@ -32,6 +32,7 @@ class L10nDoTxtReports(models.Model):
     month_txt = fields.Char()
     file_data = fields.Binary('Archivo TXT', filters=None, help="")
     file_name = fields.Char('txt_generacion.txt', size=256, required=False, help="",)
+    #rec_cursor = fields.Many2many('report.606', 'invoice_id')
 
     def show_view(self, name, model, id_xml, res_id=None, view_mode='tree,form', nodestroy=True, target='new'):
         context = self._context
@@ -59,13 +60,13 @@ class L10nDoTxtReports(models.Model):
 
     def action_generate_txt(self):
 
-        rec_cursor = self.env['report.606'].browse(self.env.context['active_ids'])
+        #rec_cursor = self.env['report.606']#.browse(self.env.context['active_ids'])
         self.file_name = 'txt_generacion.txt'
         with open("/home/odoo/txt.txt", "w") as file:
 
-            for rec in rec_cursor:
-                file.write(rec.invoice_id + "\t")
-                file.write(rec.moneda + "\t")
+            for rec in self:
+                file.write(rec.invoice_id.id + "\t")
+                file.write(rec.moneda.id + "\t")
                 file.write(rec.rnc + "\t")
                 file.write(rec.provider_name + "\t")
                 file.write(rec.tipo_bien_servicio + "\t")
